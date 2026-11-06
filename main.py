@@ -18,7 +18,7 @@ class MessageResponse(BaseModel):
 
 # --- Simple intent detection (no LLM needed) ---
 def detect_intent(message: str) -> str:
-    # punctuation hata do, lowercase karo, words list banao
+    # Remove punctuation, convert to lowercase, split into words
     clean = re.sub(r"[^\w\s]", "", message.lower())
     words = clean.split()
     if any(w in words for w in ["hello", "hi", "hey", "salam", "hii"]):
@@ -34,11 +34,11 @@ def detect_intent(message: str) -> str:
 
 
 REPLIES = {
-    "greeting": "Hello! Mein aapki kaise madad kar sakta hoon?",
-    "farewell": "Allah Hafiz! Have a great day!",
-    "pricing": "Hamari pricing ke liye sales team se contact karein.",
-    "support": "Support ke liye support@company.com pe email karein.",
-    "general": "Aapka sawaal samajh gaya. Hum jald jawab denge.",
+    "greeting": "Hello! How can I help you today?",
+    "farewell": "Goodbye! Have a great day!",
+    "pricing": "Please contact our sales team for pricing information.",
+    "support": "For support, please email us at support@company.com.",
+    "general": "Thank you for your message. We will get back to you soon.",
 }
 
 

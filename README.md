@@ -53,7 +53,7 @@ FastAPI_CICD_Demo/
 **Response:**
 ```json
 {
-  "reply": "Hello! Mein aapki kaise madad kar sakta hoon?",
+  "reply": "Hello! How can I help you today?",
   "intent": "greeting"
 }
 ```
@@ -95,3 +95,4 @@ Visit: http://localhost:8000/docs
 ```bash
 pytest tests/ -v --cov=main
 ```
+

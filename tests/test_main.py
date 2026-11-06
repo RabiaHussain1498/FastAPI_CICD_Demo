@@ -37,13 +37,13 @@ def test_chat_farewell():
 
 
 def test_chat_pricing():
-    response = client.post("/chat", json={"message": "price kya hai?"})
+    response = client.post("/chat", json={"message": "what is the price?"})
     assert response.status_code == 200
     assert response.json()["intent"] == "pricing"
 
 
 def test_chat_support():
-    response = client.post("/chat", json={"message": "mujhe help chahiye"})
+    response = client.post("/chat", json={"message": "I need help"})
     assert response.status_code == 200
     assert response.json()["intent"] == "support"
 
@@ -65,5 +65,4 @@ def test_detect_intent_farewell():
 
 
 def test_detect_intent_pricing():
-    assert detect_intent("kitna kharcha hoga") == "pricing"
-
+    assert detect_intent("what is the cost?") == "pricing"
