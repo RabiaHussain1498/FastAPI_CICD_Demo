@@ -1,4 +1,4 @@
-# FastAPI CI/CD Demo 🚀
+# FastAPI CI/CD Demo
 
 ![CI Pipeline](https://github.com/RabiaHussain1498/FastAPI_CICD_Demo/actions/workflows/ci.yml/badge.svg)
 ![CD Pipeline](https://github.com/RabiaHussain1498/FastAPI_CICD_Demo/actions/workflows/cd.yml/badge.svg)
@@ -7,7 +7,7 @@ A simple **FastAPI** application demonstrating a complete **CI/CD pipeline** usi
 
 ---
 
-## 🌟 Features
+## Features
 
 - **3 REST Endpoints** — `/health`, `/intents`, `/chat`
 - **Bilingual Intent Detection** — English + Urdu support
@@ -16,7 +16,7 @@ A simple **FastAPI** application demonstrating a complete **CI/CD pipeline** usi
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 FastAPI_CICD_Demo/
@@ -35,7 +35,7 @@ FastAPI_CICD_Demo/
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -60,24 +60,24 @@ FastAPI_CICD_Demo/
 
 ---
 
-## ⚙️ CI/CD Pipeline
+## CI/CD Pipeline
 
 ```
 Push to GitHub
-      │
-      ▼
-  🔍 Lint (ruff)
-      │
-      ▼
-  🧪 Tests (pytest + coverage)
-      │
-      ▼ (only on main)
-  🚀 Deploy to Railway
+      |
+      v
+  Lint (ruff)
+      |
+      v
+  Tests (pytest + coverage)
+      |
+      v  (only on main)
+  Deploy to Railway
 ```
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 ```bash
 git clone https://github.com/RabiaHussain1498/FastAPI_CICD_Demo.git
@@ -90,9 +90,8 @@ Visit: http://localhost:8000/docs
 
 ---
 
-## 🧪 Run Tests
+## Run Tests
 
 ```bash
 pytest tests/ -v --cov=main
 ```
-
