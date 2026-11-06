@@ -66,3 +66,4 @@ def test_detect_intent_farewell():
 
 def test_detect_intent_pricing():
     assert detect_intent("kitna kharcha hoga") == "pricing"
+

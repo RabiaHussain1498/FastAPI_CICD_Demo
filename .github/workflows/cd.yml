@@ -1,0 +1,22 @@
+name: CD Pipeline 🚢
+
+on:
+  push:
+    branches: [ main ]   # sirf main branch pe deploy hoga
+
+jobs:
+  deploy:
+    name: 🚀 Deploy to Railway
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🚂 Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: 🚀 Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: railway up --service FastAPI_CICD_Demo

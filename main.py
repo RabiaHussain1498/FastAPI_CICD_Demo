@@ -1,3 +1,5 @@
+import re
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -16,7 +18,6 @@ class MessageResponse(BaseModel):
 
 # --- Simple intent detection (no LLM needed) ---
 def detect_intent(message: str) -> str:
-    import re
     # punctuation hata do, lowercase karo, words list banao
     clean = re.sub(r"[^\w\s]", "", message.lower())
     words = clean.split()
@@ -57,3 +58,8 @@ def chat(request: MessageRequest):
     intent = detect_intent(request.message)
     reply = REPLIES[intent]
     return MessageResponse(reply=reply, intent=intent)
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
